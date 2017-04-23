@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     hideImage: function(){
       this.set('isImageShowing', false);
     },
+    update(rental,params){
+      this.sendAction('update', rental, params);
+    },
     delete: function(rental){
       if(confirm('Are you sure you want to delete this rental?')){
         this.sendAction('destroyRental', rental);
